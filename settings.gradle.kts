@@ -11,3 +11,12 @@ pluginManagement {
     }
 }
 rootProject.name="mcp-plantuml-server-2026-07-28"
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        mavenCentral()
+        maven("https://jitpack.io")
+        mavenLocal()
+    }
+}
