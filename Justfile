@@ -9,3 +9,5 @@ init:
 # Run quarkus in dev mode
 dev:
     ./gradlew quarkusDev
+run:
+    ./gradlew quarkusRun
