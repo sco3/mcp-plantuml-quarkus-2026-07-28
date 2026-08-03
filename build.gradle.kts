@@ -15,7 +15,8 @@ val quarkusPlatformVersion: String by project
 dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:quarkus-mcp-server-bom:${quarkusPlatformVersion}"))
-    implementation("io.quarkiverse.mcp:quarkus-mcp-server-http")
+    //implementation("io.quarkiverse.mcp:quarkus-mcp-server-http")
+    implementation("com.github.quarkiverse:quarkus-mcp-server:main-SNAPSHOT")
     implementation("io.quarkus:quarkus-arc")
     implementation ("net.sourceforge.plantuml:plantuml-mit:1.2026.1")
     implementation ("io.quarkus:quarkus-awt:${quarkusPlatformVersion}")
