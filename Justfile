@@ -45,14 +45,3 @@ curl-tools:
     }' \
     {{url}} | yq -P 
 
-# Discover server capabilities  with curl client 
-curl-discover:
-    curl -v -X POST \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json, text/event-stream" \
-    -d '{ \
-      "jsonrpc": "2.0", \
-      "id": 2, \
-      "method": "server/discover" \
-    }' \
-    {{url}} | yq -P 
