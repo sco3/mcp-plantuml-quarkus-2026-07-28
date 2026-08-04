@@ -1,10 +1,6 @@
-#!/usr/bin/env -S bash
+#!/usr/bin/env -S bash -x 
 
-set -xueo pipefail
-
-URL="http://localhost:8080/mcp"
-
-RESPONSE=$(curl -s -X POST \
+curl -s -X POST \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -d '{
@@ -17,7 +13,4 @@ RESPONSE=$(curl -s -X POST \
         "source": "@startuml\nUser -> AI: Native Quarkus Works\n@enduml"
       }
     }
-  }' "$URL")
-
-echo "$RESPONSE" | jq .
-
+  }' "http://localhost:8080/mcp"
