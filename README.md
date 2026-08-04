@@ -73,7 +73,6 @@ Project used Just command runner:
 just 
 Available recipes:
     curl-diagram  # Run curl client to render diagram
-    curl-discover # Discover server capabilities  with curl client
     curl-tools    # List tools with curl client
     default       # Show target list
     dev           # Run quarkus appin dev mode
