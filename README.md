@@ -26,7 +26,9 @@ You can run your application in dev mode that enables live coding using:
 Server listens on `http://localhost:8080/mcp`
 
 
-## Curl test 
+## Curl test
+
+No need to call init, no session id field is required. The Header "Accept" is required.
 
 ```
 curl -s -X POST \
