@@ -21,4 +21,4 @@ The ticket exists  https://github.com/modelcontextprotocol/inspector/issues/1858
 
 The mcp inspector v1 sample run
 
-![Screenshot](images/screenshot.png)
+![Screenshot](images/run-diagram.png)
