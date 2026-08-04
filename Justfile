@@ -35,7 +35,7 @@ curl-diagram:
 
 # List tools with curl client 
 curl-tools:
-    curl -v -X POST \
+    curl -s -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json, text/event-stream" \
     -d '{ \

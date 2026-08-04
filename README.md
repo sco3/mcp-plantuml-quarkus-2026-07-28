@@ -7,6 +7,14 @@ Also this MCP server supports earlier versions over sse and streamable http.
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
+
+## Requirements
+
+* Gradle 9.6 - project management
+* Java 25 - Java JDK
+* Just - command runner
+* yq - yaml tool
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -54,3 +62,45 @@ The ticket exists  https://github.com/modelcontextprotocol/inspector/issues/1858
 The mcp inspector v1 sample run
 
 ![Screenshot](images/run-diagram.png)
+
+
+
+## Just commands
+
+Project used Just command runner:
+
+```
+just 
+Available recipes:
+    curl-diagram  # Run curl client to render diagram
+    curl-discover # Discover server capabilities  with curl client
+    curl-tools    # List tools with curl client
+    default       # Show target list
+    dev           # Run quarkus appin dev mode
+    init          # Init quarkus project
+    run           # Run quarkus app
+
+```
+
+Run tools/list :
+
+```
+just curl-tools
+curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -d '{ "jsonrpc": "2.0", "id": 2, "method": "tools/list" }' http://localhost:8080/mcp | yq -P 
+jsonrpc: "2.0"
+id: 2
+result:
+  tools:
+    - name: renderDiagram
+      description: Renders a PlantUML string into a SVG image.
+      inputSchema:
+        type: object
+        properties:
+          source:
+            type: string
+            description: The PlantUML source code (starting with @startuml and ending with @enduml).
+        required:
+          - source
+
+```
+
